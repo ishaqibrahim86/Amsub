@@ -22,13 +22,12 @@ class _ElectricityPaymentScreenState extends State<ElectricityPaymentScreen> {
   final List<Map<String, dynamic>> discos = [
     {'id': 1, 'name': 'Ikeja Electric', 'code': 'ikeja-electric', 'color': Colors.blue},
     {'id': 2, 'name': 'Eko Electric', 'code': 'eko-electric', 'color': Colors.green},
-    {'id': 8, 'name': 'Kaduna Electric', 'code': 'kaduna-electric', 'color': Colors.orange},
+    {'id': 3, 'name': 'Kaduna Electric', 'code': 'kaduna-electric', 'color': Colors.orange},
     {'id': 4, 'name': 'Kano Electric', 'code': 'kano-electric', 'color': Colors.teal}, // Fixed: ID 4 = Kano
-    {'id': 6, 'name': 'Port Harcourt Electric', 'code': 'portharcourt-electric', 'color': Colors.purple}, // Fixed: ID 5 = Port Harcourt
-    {'id': 9, 'name': 'Jos Electric', 'code': 'jos-electric', 'color': Colors.red},
+    {'id': 5, 'name': 'Port Harcourt Electric', 'code': 'portharcourt-electric', 'color': Colors.purple}, // Fixed: ID 5 = Port Harcourt
+    {'id': 6, 'name': 'Jos Electric', 'code': 'jos-electric', 'color': Colors.red},
     {'id': 7, 'name': 'Ibadan Electric', 'code': 'ibadan-electric', 'color': Colors.brown}, // Fixed: ID 7 = Ibadan
-    {'id': 3, 'name': 'Abuja Electric', 'code': 'abuja-electric', 'color': Colors.indigo},
-    {'id': 5, 'name': 'Enugu Electric', 'code': 'enugu-electric', 'color': Colors.black},
+    {'id': 8, 'name': 'Abuja Electric', 'code': 'abuja-electric', 'color': Colors.indigo},
   ];
 
   // Meter types - UPDATED with correct capitalization
@@ -493,9 +492,9 @@ class _ElectricityPaymentScreenState extends State<ElectricityPaymentScreen> {
                   size: 32,
                   color: disco['color'] as Color,
                 ),
-                const SizedBox(height: 2),
+                const SizedBox(height: 8),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
                   child: Text(
                     disco['name'].toString().split(' ')[0],
                     textAlign: TextAlign.center,
@@ -551,16 +550,16 @@ class _ElectricityPaymentScreenState extends State<ElectricityPaymentScreen> {
                   Icon(
                     type['id'] == 'prepaid' ? Icons.electric_meter : Icons.receipt_long,
                     color: isSelected ? Colors.blue : Colors.grey[600],
-                    size: 24,
+                    size: 32,
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 8),
                   Text(
                     type['name'],
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: isSelected ? Colors.blue : Colors.black87,
-                      fontSize: 12,
+                      fontSize: 14,
                     ),
                   ),
                   // Show current validated type if available
